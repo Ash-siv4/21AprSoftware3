@@ -1,3 +1,13 @@
 # 21AprSoftware3
 
-OOP principles code uploaded
+## OOP principles:
+
+-Inheritance
+-Encapsulation
+-Polymorphism
+-Abstraction
+
+## Non-access modifiers covered:
+
+-Static
+-Final

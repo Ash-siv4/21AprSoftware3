@@ -2,6 +2,7 @@ package com.qa;
 
 import java.util.Scanner;
 
+import com.qa.StaticKW.A;
 import com.qa.encapsulation.Customer;
 import com.qa.inheritance.Child;
 import com.qa.inheritance.GrandParent;
@@ -12,6 +13,18 @@ import com.qa.polymorphism.Vehicle;
 
 public class Runner {
 	public static void main(String[] args) {
+
+		// ------------------------- Static -------------------------
+
+		StaticKW.method3();// call a static method
+		// ---------------------
+		StaticKW.A.method2();// can call method2 by calling the class then the nested class
+		// OR
+		A.method2();// can call method2 directly from the nested class
+
+		// ------------------------- Final -------------------------
+		FinalKW fin = new FinalKW();
+		fin.method1();
 
 		// ------------------------- Type Casting -------------------------
 		// Narrowing
