@@ -2,12 +2,12 @@
 
 ## OOP principles:
 
--Inheritance
--Encapsulation
--Polymorphism
--Abstraction
+- Inheritance
+- Encapsulation
+- Polymorphism
+- Abstraction
 
 ## Non-access modifiers covered:
 
--Static
--Final
+- Static
+- Final
