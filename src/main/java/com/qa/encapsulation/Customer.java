@@ -11,18 +11,20 @@ public class Customer {
 	private int accoutNo;
 
 	// constructors - also shows overloading
+	public Customer() {
+
+	}
+
 	public Customer(String name) {
 		super();
 		this.name = name;
 	}
-	
 
 	public Customer(String name, int age) {
 		super();
 		this.name = name;
 		this.age = age;
 	}
-
 
 	public Customer(int age, String address, int accoutNo) {
 		super();
@@ -82,6 +84,14 @@ public class Customer {
 	@Override
 	public String toString() {
 		return "Customer [name=" + name + ", age=" + age + ", address=" + address + ", accoutNo=" + accoutNo + "]";
+	}
+	
+	public int add(int a,int b) {
+		return 0;
+	}
+	
+	public boolean bool() {
+		return true;
 	}
 
 }
