@@ -12,6 +12,8 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import com.qa.javaBeginner.encapsulation.Customer;
+
 public class CustomerTest {
 	
 	Customer cust = new Customer();

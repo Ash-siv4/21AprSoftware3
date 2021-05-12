@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.qa.javaBeginner.inheritance.Child" project="21AprSoftware3" 
+    file="/21AprSoftware3/src/main/java/com/qa/javaBeginner/inheritance/Child.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="144" x="399" y="685"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.qa.javaBeginner.inheritance.GrandParent" project="21AprSoftware3" 
+    file="/21AprSoftware3/src/main/java/com/qa/javaBeginner/inheritance/GrandParent.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="116" width="134" x="41" y="253"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.qa.javaBeginner.inheritance.Parent" project="21AprSoftware3" 
+    file="/21AprSoftware3/src/main/java/com/qa/javaBeginner/inheritance/Parent.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="156" width="215" x="163" y="489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.qa.javaBeginner.Runner" project="21AprSoftware3" 
+    file="/21AprSoftware3/src/main/java/com/qa/javaBeginner/Runner.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="152" x="399" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.qa.javaBeginner.Hello" project="21AprSoftware3" 
+    file="/21AprSoftware3/src/main/java/com/qa/javaBeginner/Hello.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="176" width="130" x="135" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.qa.javaBeginner.StaticKW.A" project="21AprSoftware3" 
+    file="/21AprSoftware3/src/main/java/com/qa/javaBeginner/StaticKW.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="130" x="460" y="489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.qa.javaBeginner.StaticKW" project="21AprSoftware3" 
+    file="/21AprSoftware3/src/main/java/com/qa/javaBeginner/StaticKW.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="130" x="439" y="253"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.qa.javaBeginner.FinalKW" project="21AprSoftware3" 
+    file="/21AprSoftware3/src/main/java/com/qa/javaBeginner/FinalKW.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="142" x="236" y="253"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <nesting id="9">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
+  </nesting>  
+  <dependency id="10">    
+    <bendpoint x="205" y="253"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="11">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <generalization id="12">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="13">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <dependency id="14">    
+    <bendpoint x="408" y="253"/>    
+    <bendpoint x="408" y="489"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="15">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="16">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
