@@ -4,66 +4,52 @@ import java.util.Scanner;
 
 public class Runner {
 
-	private static Scanner scan = new Scanner(System.in);
+	private static Scanner sc = new Scanner(System.in);
 
-	private static String getAction() {
-		System.out.println("Enter CRUD operation:");
-		return scan.nextLine();
+	private static String getInput() {
+		System.out.println("Enter CRUD choice:");
+		return sc.nextLine();
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// create an instance of the sql class - the constructor is called immediately
-		// and connects to the database
-		Sql s = new Sql();
 
-		// call the "getAction()" method to ask for the crud operation
-		// store what the user enters in the "crud" variable
-		String crud = getAction();// may want to convert this toLowerCase since it will be case-sensitive to use
-									// inputs
+		// initialise/ create an instance of the class
+		Sql db = new Sql();
 
+		String crud = getInput();
 		try {
-			// do-while loop so that the switch case runs at least once
 			do {
-				switch (crud.toLowerCase()) {// example of converting toLowerCase
+				switch (crud.toLowerCase()) {
 				case "create":
-					System.out.println("enter value for field1: ");
-					String f1 = scan.nextLine();
-					System.out.println("enter value for field2: ");
-					String f2 = scan.nextLine();
-					s.create(f1, f2);// call the create method in the sql class and pass in the values stored from
-										// user inputs
-					break;
-				case "update":
-					System.out.println("please enter ID to update: ");
-					int id = scan.nextInt();
-					scan.nextLine();// capture the enter key
-					System.out.println("enter value for field1: ");
-					String nf1 = scan.nextLine();
-					System.out.println("enter value for field2: ");
-					String nf2 = scan.nextLine();
-					s.update(id, nf1, nf2);
+					System.out.println("Enter name of alcohol: ");
+					String name = sc.nextLine();
+					System.out.println("Enter units: ");
+					Double units = sc.nextDouble();
+					sc.nextLine();
+					db.create(name, units);
+					System.out.println("created");
 					break;
 				case "read":
-					s.readAll();
+					db.read();
+					break;
+				case "readone":
+					System.out.println("Enter id of alcohol: ");
+					int id = sc.nextInt();
+					sc.nextLine();
+					db.readById(id);
+					break;
+				case "update":
 					break;
 				case "delete":
-					System.out.println("please enter ID to delete: ");
-					int delid = scan.nextInt();
-					scan.nextLine();// capture the enter key
-					s.delete(delid);
 					break;
 				default:
 					System.out.println("invalid option");
 				}
-				crud = getAction();// may want to convert this toLowerCase since it will be case-sensitive to use
-									// inputs
-			} while (!crud.equals("exit"));// can also do as "while(!crud.equalsIgnoreCase("exit")
-			System.out.println("byeeee");
+				crud = getInput();
+			} while (!crud.equals("exit"));
+			System.out.println("end.....");
 		} finally {
-			// TODO: handle finally clause
-			scan.close();// stopping the scanner - to prevent resource leakage
-			s.close();// close the connection
+			db.close();
 		}
 	}
 

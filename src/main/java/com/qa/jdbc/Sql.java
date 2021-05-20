@@ -2,66 +2,76 @@ package com.qa.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Sql {
 
-	// url & database, username, password ---> you can put these variables in a
-	// separate class
-	public static final String URL = "jdbc:mysql://localhost:3306/dummy";
+	// connection - open, close
+	// query/statement
+
+	// url, username, password
+	public static final String URL = "jdbc:mysql://localhost:3306/drinks";
 	public static final String USER = "root";
 	public static final String PASS = "root";
 
 	private Connection conn;
+	private PreparedStatement pstmt;
 	private Statement stmt;
 
-	// open up the connection to the url, pass in the credentials too
+	// open up the connection, passing in the credentials
 	public Sql() {
-		// if you put the variables in a different class use the below line
-//		conn = DriverManager.getConnection(classname.URL, classname.USER, classname.PASS);
-		// ------------
 		try {
-			conn = DriverManager.getConnection(URL, USER, PASS);// if you put the variables in this class use this line
-			this.stmt = conn.createStatement();
+			conn = DriverManager.getConnection(URL, USER, PASS);
+			this.stmt = conn.createStatement();// create a statement object to execute sql queries
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	// CREATE
-	public void create(String field1, String field2) {
-		String insert = "INSERT INTO table1(field1, field2) VALUES('" + field1 + "','" + field2 + "');";
-		try {
-			stmt.executeUpdate(insert);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} // executeUpdate - make changes to the database, put data into the database
-	}
+	// NEED: a way to run queries - do CRUD
+	// create - INSERT INTO ... - executeUpdate
 
-	// UPDATE - use executeUpdate
-	public void update(int id, String field1, String field2) {
-		String update = "UPDATE table1 SET field1='" + field1 + "', field2='" + field2 + "' WHERE ID=" + id + ";";
+	// USING STATEMENT
+//	public void create(String name, Double units) {
+//		String insert = "INSERT INTO alcohol(`name`,units) VALUES('" + name + "','" + units + "');";
+//		try {
+//			stmt.executeUpdate(insert);
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} // executeUpdate - make changes to the database, put data into the database
+//
+//	}
+
+	// USING PREPARED STATEMENT
+	public void create(String name, Double units) {
+		String insert = "INSERT INTO alcohol(`name`,units) VALUES(?,?);";
 		try {
-			stmt.executeUpdate(update);
+			pstmt = conn.prepareStatement(insert);
+			pstmt.setString(1, name);
+			pstmt.setDouble(2, units);
+			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 	}
 
-	// READ - use executeQuery --> get data from the database
-	public void readAll() {
-		String read = "SELECT * FROM table1;";
+	// read - SELECT ... - executeQuery
+	public void read() {
+		String read = "SELECT * FROM alcohol;";
 		ResultSet rs;
+
 		try {
 			rs = stmt.executeQuery(read);
 			while (rs.next()) {
-				System.out.println("ID = " + rs.getInt("ID") + ", field1 = " + rs.getString("field1") + ", field2 = "
-						+ rs.getString("field2"));
+				System.out.println("ID:" + rs.getInt("id") + ", NAME: " + rs.getString("name") + ", UNITS: "
+						+ rs.getDouble("units"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -70,18 +80,29 @@ public class Sql {
 
 	}
 
-	// DELETE - use executeUpdate
-	public void delete(int id) {
-		String delete = "DELETE FROM table1 WHERE ID=" + id + ";";
+	// read - SELECT ... - executeQuery
+	public void readById(int id) {
+		String readById = "SELECT * FROM alcohol WHERE id=" + id + ";";
+		ResultSet rs;
+
 		try {
-			stmt.executeUpdate(delete);
+			rs = stmt.executeQuery(readById);
+			while (rs.next()) {
+				System.out.println("ID:" + rs.getInt("id") + ", NAME: " + rs.getString("name") + ", UNITS: "
+						+ rs.getDouble("units"));
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 	}
 
-	// method called to close the connection
+	// update - UPDATE ... - executeUpdate
+
+	// delete - DELETE ... - executeUpdate
+
+	// close the connection
 	public void close() {
 		try {
 			conn.close();
@@ -90,4 +111,5 @@ public class Sql {
 			e.printStackTrace();
 		}
 	}
+
 }
